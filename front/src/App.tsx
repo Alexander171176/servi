@@ -11,7 +11,8 @@ import Forgot from './user/pages/Forgot/Forgot';
 import Profile from './user/pages/Profile/Profile';
 import NotFound from './user/pages/NotFound/NotFound';
 import Dashboard from './admin/pages/Dashboard/Dashboard';
-import AuthProvider from './contexts/AuthProvider';
+import AdminProfile from './admin/pages/AdminProfile/AdminProfile';
+import { AuthProvider } from './contexts/AuthProvider';
 import RequireAuth from './contexts/RequireAuth';
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
           <Route path="/admin/" element={<RequireAuth><Dashboard /></RequireAuth>} />
+          <Route path="/admin/profile" element={<RequireAuth><AdminProfile /></RequireAuth>} />
         </Routes>
       </AuthProvider>
     </>

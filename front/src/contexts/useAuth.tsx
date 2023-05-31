@@ -5,8 +5,10 @@ useAuth: Это пользовательский хук,
 например, для проверки статуса аутентификации или получения данных пользователя.
 */
 import { useContext } from "react";
-import { AuthContext } from "./AuthProvider";
+import { UserContext } from "./AuthProvider";
 
 export default function useAuth() {
-    return useContext(AuthContext);
+  const userContext = useContext(UserContext);
+  return userContext?.user || null;
 }
+

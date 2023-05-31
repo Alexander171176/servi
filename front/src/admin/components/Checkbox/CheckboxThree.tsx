@@ -44,7 +44,7 @@ const CheckboxThree = () => {
             </span>
           </div>
         </div>
-        Checkbox Text
+        Текст флажка
       </label>
     </div>
   );

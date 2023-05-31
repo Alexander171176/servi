@@ -9,7 +9,7 @@ const DataStats = () => {
               <h4 className="mb-0.5 text-xl font-semibold text-black dark:text-white md:text-title-lg">
                 $4,350
               </h4>
-              <p className="text-sm font-medium">Unique Visitors</p>
+              <p className="text-sm font-medium">Уникальные посетители</p>
             </div>
             <div className="flex items-center gap-1">
               <svg
@@ -32,7 +32,7 @@ const DataStats = () => {
               <h4 className="mb-0.5 text-xl font-semibold text-black dark:text-white md:text-title-lg">
                 55.9K
               </h4>
-              <p className="text-sm font-medium">Total Pageviews</p>
+              <p className="text-sm font-medium">Количество просмотров</p>
             </div>
             <div className="flex items-center gap-1">
               <svg
@@ -55,7 +55,7 @@ const DataStats = () => {
               <h4 className="mb-0.5 text-xl font-semibold text-black dark:text-white md:text-title-lg">
                 54%
               </h4>
-              <p className="text-sm font-medium">Bounce Rate</p>
+              <p className="text-sm font-medium">Отказы</p>
             </div>
             <div className="flex items-center gap-1">
               <svg
@@ -78,7 +78,7 @@ const DataStats = () => {
               <h4 className="mb-0.5 text-xl font-semibold text-black dark:text-white md:text-title-lg">
                 2m 56s
               </h4>
-              <p className="text-sm font-medium">Visit Duration</p>
+              <p className="text-sm font-medium">Визиты</p>
             </div>
             <div className="flex items-center gap-1">
               <svg

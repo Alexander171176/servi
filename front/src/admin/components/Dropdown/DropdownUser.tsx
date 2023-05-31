@@ -1,12 +1,8 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../layout/DefaultLayout';
-
 import UserOne from '../../assets/images/user/user-01.png';
 
 const DropdownUser = () => {
-
-  const { user } = useContext(UserContext);
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -49,9 +45,9 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white">
-           {user.user_name} 
+            user_name 
           </span>
-          <span className="block text-xs">{user.role_name} </span>
+          <span className="block text-xs"> role_name  </span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
@@ -89,7 +85,7 @@ const DropdownUser = () => {
         <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
           <li>
             <Link
-              to="/profile"
+              to="/admin/profile"
               className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
             >
               <svg
@@ -109,7 +105,7 @@ const DropdownUser = () => {
                   fill=""
                 />
               </svg>
-              My Profile
+              Мой профиль
             </Link>
           </li>
           <li>
@@ -130,7 +126,7 @@ const DropdownUser = () => {
                   fill=""
                 />
               </svg>
-              My Contacts
+              Мои Контакты
             </Link>
           </li>
           <li>
@@ -155,11 +151,12 @@ const DropdownUser = () => {
                   fill=""
                 />
               </svg>
-              Account Settings
+              Настройки аккаунта
             </Link>
           </li>
         </ul>
-        <button className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+        <button className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base" 
+                >
           <svg
             className="fill-current"
             width="22"
@@ -177,7 +174,7 @@ const DropdownUser = () => {
               fill=""
             />
           </svg>
-          Log Out
+          Выход
         </button>
       </div>
       {/* <!-- Dropdown End --> */}

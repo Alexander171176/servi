@@ -40,7 +40,7 @@ const TaskHeader = () => {
     <div className="flex flex-col gap-y-4 rounded-sm border border-stroke bg-white p-3 shadow-default dark:border-strokedark dark:bg-boxdark sm:flex-row sm:items-center sm:justify-between">
       <div>
         <h3 className="pl-2 text-title-lg font-semibold text-black dark:text-white">
-          Tasks
+          Задачи
         </h3>
       </div>
       <div className="flex flex-col gap-4 2xsm:flex-row 2xsm:items-center">
@@ -93,7 +93,7 @@ const TaskHeader = () => {
                 fill=""
               />
             </svg>
-            Add task
+            Добавить
           </button>
         </div>
       </div>
