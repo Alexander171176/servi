@@ -1,8 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../contexts/AuthProvider';
 import UserOne from '../../assets/images/user/user-01.png';
 
+
 const DropdownUser = () => {
+
+  const { user, logout } = useContext(UserContext);
+
+  if (!user) {
+    return (
+      <p className="text-center text-danger">Загрузка...</p>
+    );
+  }
+
+  const { user_name, role_name } = user;
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -45,9 +57,9 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white">
-            user_name 
+            {user_name}
           </span>
-          <span className="block text-xs"> role_name  </span>
+          <span className="block text-xs"> {role_name} </span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
@@ -55,9 +67,8 @@ const DropdownUser = () => {
         </span>
 
         <svg
-          className={`hidden fill-current sm:block ${
-            dropdownOpen ? 'rotate-180' : ''
-          }`}
+          className={`hidden fill-current sm:block ${dropdownOpen ? 'rotate-180' : ''
+            }`}
           width="12"
           height="8"
           viewBox="0 0 12 8"
@@ -78,9 +89,8 @@ const DropdownUser = () => {
         ref={dropdown}
         onFocus={() => setDropdownOpen(true)}
         onBlur={() => setDropdownOpen(false)}
-        className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark ${
-          dropdownOpen === true ? 'block' : 'hidden'
-        }`}
+        className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark ${dropdownOpen === true ? 'block' : 'hidden'
+          }`}
       >
         <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
           <li>
@@ -155,8 +165,8 @@ const DropdownUser = () => {
             </Link>
           </li>
         </ul>
-        <button className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base" 
-                >
+        <button className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+                onClick={logout}>
           <svg
             className="fill-current"
             width="22"

@@ -22,8 +22,8 @@ class JWTRepo:  # Объявление класса JWTRepo
             # Создание объекта datetime, представляющего текущее время UTC
             # с добавлением значения expires_delta, и присваивание его переменной expire
         else:  # Иначе
-            expire = datetime.utcnow() + timedelta(minutes=15)
-            # Создание объекта datetime, представляющего текущее время UTC с добавлением 15 минут,
+            expire = datetime.utcnow() + timedelta(minutes=30)
+            # Создание объекта datetime, представляющего текущее время UTC с добавлением 30 минут,
             # и присваивание его переменной expire
         to_encode.update({"exp": expire})  # Добавление в словарь to_encode ключа "exp" со значением переменной expire
         encode_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
@@ -37,7 +37,7 @@ class JWTRepo:  # Объявление класса JWTRepo
             decode_token = jwt.decode(
                 self.token, SECRET_KEY, algorithms=[ALGORITHM])
             # Декодирование JWT-токена и присваивание результата переменной decode_token
-            return decode_token if decode_token["expires"] >= datetime.time() else None
+            return decode_token if decode_token["expires"] >= datetime.utcnow() else None
             # Если значение ключа "expires" словаря decode_token больше или равно текущему времени,
             # то вернуть decode_token, иначе вернуть None
         except:  # Если в блоке try произошла ошибка

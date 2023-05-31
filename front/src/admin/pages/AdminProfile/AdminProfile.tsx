@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../../../contexts/AuthProvider';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import CoverOne from '../../assets/images/cover/cover-01.png';
 import userSix from '../../assets/images/user/user-06.png';
 import DefaultLayout from '../../layout/DefaultLayout';
 
-const AdminProfile  = () => {
+const AdminProfile = () => {
+
+  const { user, logout } = useContext(UserContext);
+
+  if (!user) {
+    return (
+      <p className="text-center text-danger">Загрузка...</p>
+    );
+  }
+
+  const { nick_name, user_name, phone_number, email, role_name } = user;
+
+  // Распечатывание значений переменных
+  // console.log('nick_name:', nick_name);
+  // console.log('user_name:', user_name);
+  // console.log('phone_number:', phone_number);
+  // console.log('email:', email);
+  // console.log('role_name:', role_name);
+
   return (
     <DefaultLayout>
       <Breadcrumb pageName="Profile" />
@@ -89,9 +108,9 @@ const AdminProfile  = () => {
           </div>
           <div className="mt-4">
             <h3 className="mb-1.5 text-2xl font-semibold text-black dark:text-white">
-              Danish Heilium
+              {user_name}
             </h3>
-            <p className="font-medium">Ui/Ux Designer</p>
+            <p className="font-medium"> {role_name} </p>
             <div className="mx-auto mt-4.5 mb-5.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
               <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
                 <span className="font-semibold text-black dark:text-white">
