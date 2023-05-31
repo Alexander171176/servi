@@ -7,14 +7,13 @@ from app.service.admin.users_service import UserService
 from app.repository.auth_repository import JWTBearer, JWTRepo
 from fastapi.security import HTTPAuthorizationCredentials
 
-router = APIRouter(
-    prefix="/admin",
-    tags=['Администратор'],
+users_router = APIRouter(
+    tags=['Администратор - Пользователи'],
     dependencies=[Depends(JWTBearer())]
 )
 
 
-@router.get("/users", response_model=ResponseSchema, response_model_exclude_none=True)
+@users_router.get("admin/users", response_model=ResponseSchema, response_model_exclude_none=True)
 async def get_user_list(credentials: HTTPAuthorizationCredentials = Security(JWTBearer())):
     token = JWTRepo.extract_token(credentials)
     role = await UserService.get_current_user_role(token)
@@ -25,7 +24,7 @@ async def get_user_list(credentials: HTTPAuthorizationCredentials = Security(JWT
     return ResponseSchema(detail="Успешное получение данных!", result=users)
 
 
-@router.get("/users/{email}", response_model=ResponseSchema, response_model_exclude_none=True)
+@users_router.get("admin/users/{email}", response_model=ResponseSchema, response_model_exclude_none=True)
 async def get_user_by_email(email: str, credentials: HTTPAuthorizationCredentials = Security(JWTBearer())):
     token = JWTRepo.extract_token(credentials)
     role = await UserService.get_current_user_role(token)
@@ -36,7 +35,7 @@ async def get_user_by_email(email: str, credentials: HTTPAuthorizationCredential
     return ResponseSchema(detail="Успешное получение данных!", result=user)
 
 
-@router.put("/users/{email}/role", response_model=ResponseSchema, response_model_exclude_none=True)
+@users_router.put("admin/users/{email}/role", response_model=ResponseSchema, response_model_exclude_none=True)
 async def update_user_role(email: str,
                            role: UserRoleRequestSchema,
                            credentials: HTTPAuthorizationCredentials = Security(JWTBearer())):

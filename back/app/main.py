@@ -42,12 +42,13 @@ def init_app():
 
     from app.controller.public import authentication, profile  # импортируем контроллеры
 
-    app.include_router(authentication.router)  # регистрируем контроллер аутентификации
-    app.include_router(profile.router)  # регистрируем контроллер пользователей
+    app.include_router(authentication.auth_router)  # регистрируем контроллер аутентификации
+    app.include_router(profile.profile_router)  # регистрируем контроллер пользователей
 
-    from app.controller.admin import users
+    from app.controller.admin import admin, users
 
-    app.include_router(users.router)
+    app.include_router(admin.admin_router)
+    app.include_router(users.users_router)
 
     return app
 

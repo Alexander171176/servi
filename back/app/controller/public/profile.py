@@ -17,7 +17,7 @@ from app.service.public.profile import ProfileService
 
 # Создаем объект router класса APIRouter с префиксом "/account", тегом "Профиль"
 # и зависимостью от класса JWTBearer для аутентификации пользователя
-router = APIRouter(
+profile_router = APIRouter(
     prefix="/account",
     tags=['Профиль'],
     dependencies=[Depends(JWTBearer())]
@@ -30,7 +30,7 @@ router = APIRouter(
 # Используется метод get_user_profile класса UserService для получения профиля пользователя
 # Затем возвращается объект ResponseSchema с сообщением "Успешное получение данных!"
 # и информацией о профиле пользователя
-@router.get("/", response_model=ResponseSchema, response_model_exclude_none=True)
+@profile_router.get("/", response_model=ResponseSchema, response_model_exclude_none=True)
 async def get_user_profile(credentials: HTTPAuthorizationCredentials = Security(JWTBearer())):
     token = JWTRepo.extract_token(credentials)
     result = await ProfileService.get_user_profile(token['email'])
