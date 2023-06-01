@@ -22,6 +22,7 @@ import Alerts from './admin/pages/UIElements/Alerts';
 import Buttons from './admin/pages/UIElements/Buttons';
 import SignIn from './admin/pages/Auth/SignIn';
 import SignUp from './admin/pages/Auth/SignUp';
+import GetUsers from './admin/pages/Users/GetUsers';
 import { AuthProvider } from './contexts/AuthProvider';
 import RequireAuth from './contexts/RequireAuth';
 
@@ -71,6 +72,7 @@ function App() {
           <Route path="/admin/ui/buttons" element={<RequireAuth><Buttons /></RequireAuth>} />
           <Route path="/admin/auth/signin" element={<RequireAuth><SignIn /></RequireAuth>} />
           <Route path="/admin/auth/signup" element={<RequireAuth><SignUp /></RequireAuth>} />
+          <Route path="/admin/users" element={<RequireAuth><GetUsers /></RequireAuth>} />
         </Routes>
       </AuthProvider>
     </>

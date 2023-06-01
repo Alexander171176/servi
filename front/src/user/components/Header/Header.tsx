@@ -1,54 +1,75 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import NavigationLinks from '../NavigationLinks/NavigationLinks';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/img/logo.png';
-import DarkModeSwitcher from "../../../admin/components/DarkModeSwitcher/DarkModeSwitcher";
+import DarkModeSwitcher from '../../../admin/components/DarkModeSwitcher/DarkModeSwitcher';
+import NavigationLinks from '../NavigationLinks/NavigationLinks';
 
-const Header: React.FC = () => {
-
+const Header = (props: {
+    sidebarOpen: string | boolean | undefined;
+    setSidebarOpen: (arg0: boolean) => void;
+}) => {
     return (
-        <>
-            <header className="z-10 py-1 bg-white shadow-md dark:bg-boxdark fixed top-0 left-0 right-0">
-                <nav className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
-                    <div className="w-full container mx-auto flex flex-wrap items-center mt-0 pb-3 md:pb-0">
+        <header className="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
+            <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
+                <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
+                    {/* <!-- Hamburger Toggle BTN --> */}
+                    <button
+                        aria-controls="sidebar"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            props.setSidebarOpen(!props.sidebarOpen);
+                        }}
+                        className="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm dark:border-strokedark dark:bg-boxdark lg:hidden"
+                    >
+                        <span className="relative block h-5.5 w-5.5 cursor-pointer">
+                            <span className="du-block absolute right-0 h-full w-full">
+                                <span
+                                    className={`relative top-0 left-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white ${!props.sidebarOpen && '!w-full delay-300'
+                                        }`}
+                                ></span>
+                                <span
+                                    className={`relative top-0 left-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white ${!props.sidebarOpen && 'delay-400 !w-full'
+                                        }`}
+                                ></span>
+                                <span
+                                    className={`relative top-0 left-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white ${!props.sidebarOpen && '!w-full delay-500'
+                                        }`}
+                                ></span>
+                            </span>
+                            <span className="absolute right-0 h-full w-full rotate-45">
+                                <span
+                                    className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white ${!props.sidebarOpen && '!h-0 !delay-[0]'
+                                        }`}
+                                ></span>
+                                <span
+                                    className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white ${!props.sidebarOpen && '!h-0 !delay-200'
+                                        }`}
+                                ></span>
+                            </span>
+                        </span>
+                    </button>
+                    {/* <!-- Hamburger Toggle BTN --> */}
+                </div>
 
-                        <Link to="/" className="mr-4">
-                            <img
-                                src={Logo}
-                                width="48"
-                                height="48"
-                                alt="logo"
-                            />
-                        </Link>
+                <Link className="block flex-shrink-0" to="/">
+                    <img src={Logo}
+                        width="32"
+                        height="32"
+                        alt="Logo" />
+                </Link>
 
-                        <NavigationLinks />
+                <NavigationLinks />
 
+                <div className="flex items-center gap-3 2xsm:gap-7">
+                    <ul className="flex items-center gap-2 2xsm:gap-4">
+                        {/* <!-- Dark Mode Toggler --> */}
                         <DarkModeSwitcher />
-
-                        <div className="block lg:hidden pr-4">
-
-                            <button
-                                id="nav-toggle"
-                                className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-teal-500 appearance-none focus:outline-none"
-                            >
-                                <svg
-                                    className="fill-current h-3 w-3"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <title>Menu</title>
-                                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                                </svg>
-                            </button>
-
-                        </div>
-
-                    </div>
-                </nav>
-            </header>
-        </>
+                        {/* <!-- Dark Mode Toggler --> */}
+                    </ul>
+                </div>
+            </div>
+        </header>
     );
-
 };
 
 export default Header;

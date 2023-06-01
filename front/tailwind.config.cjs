@@ -458,6 +458,7 @@ module.exports = {
       },
       opacity: {
         65: '.65',
+        90: '.90',
       },
       backgroundImage: {
         video: "url('../images/video/video.png')",
