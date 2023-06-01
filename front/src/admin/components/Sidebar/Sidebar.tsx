@@ -671,7 +671,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                 (isActive && '!text-white')
                               }
                             >
-                              Вход
+                              Авторизация
                             </NavLink>
                           </li>
                           <li>
@@ -682,7 +682,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                 (isActive && '!text-white')
                               }
                             >
-                              Выход
+                              Регистрация
                             </NavLink>
                           </li>
                         </ul>

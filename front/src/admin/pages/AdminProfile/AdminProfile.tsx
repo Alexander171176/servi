@@ -111,7 +111,7 @@ const AdminProfile = () => {
               {user_name}
             </h3>
             <p className="font-medium"> {role_name} </p>
-            <div className="mx-auto mt-4.5 mb-5.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
+            {/* <div className="mx-auto mt-4.5 mb-5.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
               <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
                 <span className="font-semibold text-black dark:text-white">
                   259
@@ -130,24 +130,49 @@ const AdminProfile = () => {
                 </span>
                 <span className="text-sm">Following</span>
               </div>
-            </div>
+            </div> */}
 
             <div className="mx-auto max-w-180">
               <h4 className="font-semibold text-black dark:text-white">
                 Обо мне
               </h4>
-              <p className="mt-4.5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque posuere fermentum urna, eu condimentum mauris
-                tempus ut. Donec fermentum blandit aliquet. Etiam dictum dapibus
-                ultricies. Sed vel aliquet libero. Nunc a augue fermentum,
-                pharetra ligula sed, aliquam lacus.
+              <p className="mt-4.5 text-left">
+                я it-специалист, fullstack разработчик.
+                Компьютером увлёкся в 2006 году когда собрал свой первый настольный компьютер,
+                вначале занимался железом, работал в сфере КИПиА,
+                в качестве хобби освоил графические программы по обработке изображений и видео.
+                В 2011 году устроился на работу менеджером по продажам промышленного оборудования,
+                торговал на биржах, в следствии стал руководителем отдела продаж.
+                Программированием начал заниматься в 2013 году,
+                на заре развития веб-технологий создал первый сайт для компании где раньше работал.
+                Освоил базовые технологии html, css, js, и поначалу создавал уникальные сайты для компаний.
+                В 2016 году стал работать с backend и создал несколько своих уникальных фреймворков
+                для интернет магазинов. Далее освоил множество технологий, около 5 лет работал на php,
+                symfony, laravel, развивался как Middle разработчик.
+                Потом стал создавать полноценные приложения для бизнеса, для продаж.
+                Работал как в фронт-энде, так и в бэк-энде. При этом,
+                в своей разработке опирался на объектно-ориентированное программирование,
+                паттерны проектирования, MVC, и принципам SOLID.
+                В данный момент перешёл на современный стек технологий для разработки API,
+                интернет сервисов, RestFull приложений.
+                На фронтэнде использую React, Node JS, Tailwind CSS, UIkit, Bootstrap, Gulp, базовые HTML, CSS, JS
+                и другие. На бэкэнде использую Python, FastAPI, подключаю контейнеризацию Docker, котроль версий git,
+                базы данных такие как Postgres. Познакомился с GraphQL и Open API,
+                в своей работе стремлюсь осваивать и внедрять современные трендовые технологии.
+                Некоторое время работал в Андроид студио, был интерес к аналитике данных,
+                в частности парсинга сайтов на Python. Так же активно работаю с продвижением сайтов,
+                путём создания различных рекламных компаний в Google Ads, Facebook Ads, Яндекс директ.
+                Работая с клиентами я создаю максимальные комфортные условия,
+                осуществляю поддержку созданных проектов и их продвижение, даю бесплатную консультацию,
+                поддерживаю диалог в мессенджерах whatsapp, telegram.
+                Качество работы и функциональность всегда стоит в приоритете, а так же учитываются все пожелания
+                и бизнес процессы.
               </p>
             </div>
 
             <div className="mt-6.5">
               <h4 className="mb-3.5 font-medium text-black dark:text-white">
-                Follow me on
+                Контакты
               </h4>
               <div className="flex items-center justify-center gap-3.5">
                 <a
@@ -297,6 +322,13 @@ const AdminProfile = () => {
                 </a>
               </div>
             </div>
+            <button
+              className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-4 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mt-6 mb-1 ease-linear transition-all duration-150"
+              type="button"
+              onClick={logout}
+            >
+              Выйти
+            </button>
           </div>
         </div>
       </div>

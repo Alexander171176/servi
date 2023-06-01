@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../contexts/AuthProvider';
-import UserOne from '../../assets/images/user/user-01.png';
+import UserOne from '../../assets/images/user/user-06.png';
 
 
 const DropdownUser = () => {

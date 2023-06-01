@@ -124,13 +124,13 @@ const Profile: React.FC = () => {
                                                     {user.role_name === "admin" && (
                                                         <Link
                                                             to="/admin/"
-                                                            className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                            className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-3 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-2 mb-1 ease-linear transition-all duration-150"
                                                         >
                                                             Панель Администратора
                                                         </Link>
                                                     )}
                                                     <button
-                                                        className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                        className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm mb-8 px-3 py-1.5 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                                                         type="button"
                                                         onClick={logout}
                                                     >

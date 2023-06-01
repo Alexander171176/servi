@@ -8,7 +8,7 @@ import ChartOne from '../../components/Chart/ChartOne';
 import ChartTwo  from '../../components/Chart/ChartTwo';
 import ChartThree  from '../../components/Chart/ChartThree';
 import MapOne  from '../../components/MapOne/MapOne';
-import TableOne  from '../../components/Table/TableOne';
+import TableOne  from '../../components/Tables/TableOne';
 import ChatCard  from '../../components/Chat/ChatCard';
 
 const Dashboard: React.FC = () => {
