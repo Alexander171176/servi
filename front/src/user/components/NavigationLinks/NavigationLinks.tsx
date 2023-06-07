@@ -8,7 +8,7 @@ const links = [
   { path: "/agreement", text: "Пользовательское соглашение" },
   { path: "/contract", text: "Договор оферты" },
   { path: "/register", text: "Регистрация" },
-  { path: "/profile", text: "Аккаунт" },
+  { path: "/login", text: "Аккаунт" },
 ];
 
 const NavigationLinks: React.FC = () => {
@@ -28,11 +28,11 @@ const NavigationLinks: React.FC = () => {
 
           {links.map((link) => (
             <li className="mr-6 my-2 md:my-0" key={link.path}>
-              {link.path === "/profile" ? (
+              {link.path === "/login" ? (
                 <button
                   className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-rose-500 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"
                   onClick={() => {
-                    window.location.href = "/profile";
+                    window.location.href = "/login";
                   }}
                 >
                   <span className="relative px-5 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray dark:text-blue-900 rounded-md group-hover:bg-opacity-0">{link.text}</span>

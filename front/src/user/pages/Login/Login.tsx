@@ -10,7 +10,7 @@ import LoginImgDark from '../../assets/img/login-office-dark.jpeg';
 
 const Login: React.FC = () => {
     useEffect(() => {
-        document.title = 'Вход в систему';
+        document.title = 'Аккаунт';
     }, []);
 
     const navigate = useNavigate();
@@ -118,7 +118,7 @@ const Login: React.FC = () => {
                                             />
                                         </div>
 
-                                        <button className="flex mt-2 mx-auto dark:text-white" onClick={handleReload}>
+                                        <button className="flex mt-2 mx-auto dark:text-gray-700" onClick={handleReload}>
                                             <FiRefreshCw className="mt-1" /> &nbsp; Перезагрузить reCAPTCHA
                                         </button>
 

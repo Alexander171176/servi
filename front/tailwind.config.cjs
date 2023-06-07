@@ -8,6 +8,15 @@ module.exports = {
     fontFamily: {
       satoshi: ['Satoshi', 'sans-serif'],
     },
+    fontSize: {
+      sm: '0.8rem',
+      base: '1rem',
+      xl: '1.25rem',
+      '2xl': '1.563rem',
+      '3xl': '1.953rem',
+      '4xl': '2.441rem',
+      '5xl': '3.052rem',
+    },
     colors: {
       current: 'currentColor',
       transparent: 'transparent',
@@ -65,7 +74,7 @@ module.exports = {
         800: '#9a3412',
         900: '#7c2d12',
         950: '#450a0a',
-      },      
+      },
       yellow: {
         50: '#FFFBEB',
         100: '#FEF3C7',
@@ -91,7 +100,7 @@ module.exports = {
         800: '#3f6212',
         900: '#365314',
         950: '#1a2e05',
-      },      
+      },
       green: {
         50: '#f0fdf4',
         100: '#dcfce7',
@@ -117,7 +126,7 @@ module.exports = {
         800: '#065f46',
         900: '#064e3b',
         950: '#022c22',
-      }, 
+      },
       teal: {
         50: '#f0fdfa',
         100: '#ccfbf1',
@@ -130,7 +139,7 @@ module.exports = {
         800: '#115e59',
         900: '#134e4a',
         950: '#042f2e',
-      }, 
+      },
       cyan: {
         50: '#ecfeff',
         100: '#cffafe',
@@ -143,7 +152,7 @@ module.exports = {
         800: '#155e75',
         900: '#164e63',
         950: '#083344',
-      }, 
+      },
       sky: {
         50: '#f0f9ff',
         100: '#e0f2fe',
@@ -156,7 +165,7 @@ module.exports = {
         800: '#075985',
         900: '#0c4a6e',
         950: '#082f49',
-      },                                        
+      },
       blue: {
         50: '#EFF6FF',
         100: '#DBEAFE',
@@ -195,7 +204,7 @@ module.exports = {
         800: '#5b21b6',
         900: '#4c1d95',
         950: '#2e1065',
-      },      
+      },
       purple: {
         50: '#faf5ff',
         100: '#f3e8ff',
@@ -221,7 +230,7 @@ module.exports = {
         800: '#86198f',
         900: '#701a75',
         950: '#4a044e',
-      },      
+      },
       pink: {
         50: '#FDF2F8',
         100: '#FCE7F3',
@@ -234,7 +243,7 @@ module.exports = {
         800: '#9D174D',
         900: '#831843',
         950: '#500724',
-      }, 
+      },
       rose: {
         50: '#fff1f2',
         100: '#ffe4e6',

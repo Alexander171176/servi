@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PublicLayout from '../../layout/PublicLayout';
 
 interface User {
@@ -15,6 +15,7 @@ interface User {
 
 const Profile: React.FC = () => {
     const [user, setUser] = useState<User>({});
+    const navigate = useNavigate();
 
     useEffect(() => {
         const loadUser = async () => {
@@ -22,6 +23,12 @@ const Profile: React.FC = () => {
                 const auth_token = localStorage.getItem("auth_token");
                 const auth_token_type = localStorage.getItem("auth_token_type");
                 const token = `${auth_token_type} ${auth_token}`;
+
+                if (!auth_token) {
+                    navigate("/login");
+                    return;
+                }
+
                 const response = await axios.get<User>("http://localhost:8888/account/", {
                     headers: { Authorization: token },
                 });
@@ -32,7 +39,7 @@ const Profile: React.FC = () => {
         };
 
         loadUser();
-    }, []);
+    }, [navigate]);
 
     const logout = () => {
         localStorage.removeItem("auth_token");
